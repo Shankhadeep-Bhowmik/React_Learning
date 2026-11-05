@@ -1,0 +1,40 @@
+.card {
+  background: hsl(69.75deg 59.9% 41.46% / 85.1%);
+  border-radius: 12px;
+  padding: 15px;
+  max-width: 300px;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #212321;
+}
+
+
+/* Note: Since your <img> has className="card", target it specifically or change its class in JSX */
+.personImg{
+  width: 262px;
+    height: 166px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 16px;
+    object-position: top;
+}
+
+.details{
+  font-size: 1rem;
+  margin-bottom: 12px !important;
+  font-weight: bold;
+}
+
+#tutorName {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1e1f22;
+}
+
+#courseName {
+  font-weight: bold;
+}
