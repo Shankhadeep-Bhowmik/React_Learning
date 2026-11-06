@@ -1,0 +1,53 @@
+.card {
+  width: 260px;
+  height: 314px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.productDetail {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#productName {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #d1890f;
+  line-height: 1.4;
+  text-align: center;
+  /* Optional: Truncate long names to a single line with ellipsis */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+
+#productPrice {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #2563eb;
+
+}

@@ -1,0 +1,37 @@
+
+.mainPage {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Fills the screen viewport */
+  overflow: hidden; /* Prevents double scrolling on the main window */
+}
+
+/* Scrollable container for the cards */
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;       /* Makes cards go horizontally and wrap to the next line */
+  gap: 24px;             /* Good-looking gap between cards */
+  justify-content: center;
+  align-items: center;   /* Centers the cards vertically */
+  padding: 32px;
+  overflow-y:auto;      /* Makes the card section scrollable if there are many products */
+  flex: 1;               /* Takes up remaining space between Navbar and Footer */
+}
+
+/* Custom scrollbar styling for a cleaner look */
+.cardContainer::-webkit-scrollbar {
+  width: 8px;
+}
+
+.cardContainer::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.cardContainer::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.cardContainer::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
