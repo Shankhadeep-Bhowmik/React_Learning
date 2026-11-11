@@ -23,8 +23,8 @@ const App = () => {
     setInputTask("");
   }
   function deleteTask(index){
-    tasks.splice(index, 1);
-    setTasks(...tasks)
+    let keepTasks = tasks.filter((task, ind) => ind !== index)
+    setTasks(keepTasks)
   }
   return (
     <>
