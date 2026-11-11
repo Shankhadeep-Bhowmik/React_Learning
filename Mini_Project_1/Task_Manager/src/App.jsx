@@ -3,9 +3,18 @@ import "./App.css"
 const App = () => {
   const [inputTask, setInputTask] = useState("");
   const [tasks, setTasks] = useState([]);
-  const [isChecked, setIsChecked] = useState(false);
-  const handleChange = (e) => {
-    setIsChecked(e.target.checked);
+  
+  const handleChange = (index) => {
+    let updateTasks = tasks.map((task, idx) => {
+      if(idx === index){
+        return {
+          ...task,
+          isCompleted: !task.isCompleted
+        }
+      }
+      return task;
+    })
+    setTasks(updateTasks);
   }
   function addTask(){
     if(inputTask.trim() === ""){
@@ -16,7 +25,7 @@ const App = () => {
       ...tasks,
       {
         taskName:inputTask,
-        isCompleted:isChecked
+        isCompleted:false
       }
     ]
     )
@@ -44,10 +53,10 @@ const App = () => {
             {
               tasks.map((task,index)=>(
                 <div className='eachTask'>
-                  <li key={index}>
+                  <li key={index} className={task.isCompleted?"completed":""}>
                   <input type="checkbox"
-                  checked={isChecked}
-                  onChange={handleChange}/>
+                  checked={task.isCompleted}
+                  onChange={()=>handleChange(index)}/>
                   {task.taskName}
                   </li>
                   <button onClick={()=>deleteTask(index)}>Delete</button>
@@ -56,7 +65,7 @@ const App = () => {
             }
           </div>
           <div className="countTask">
-            
+            Tasks remaining: {tasks.filter((task) => !task.isCompleted).length} / {tasks.length}
           </div>
         </main>
       </div>
