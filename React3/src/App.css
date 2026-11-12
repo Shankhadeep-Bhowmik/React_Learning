@@ -1,0 +1,123 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ body{
+  min-height: 100vh;
+  background-color: #d2cece;
+  padding: 20px;
+  font-size: 1.2rem;
+  font-family:cursive;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+ }
+ .container{
+  width: 100%;
+  /* max-width: 900px; */
+  background-color: #f4f0f0ef;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+ }
+ h1{
+  color: #0367f2db;
+  text-align: center;
+ }
+.inputArea{
+  width: 100%;
+}
+.showProfile{
+  border: 1px solid #c0bcbc72;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+.topProfile{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Creates two equal 1fr columns */
+  gap: 16px; /* Adds space between rows and columns */
+  padding: 16px;
+  border: 1px solid #b5b1b16b;
+  background-color: #afddee2b;
+  border-radius: 5px;
+  width: 100%;
+}
+.address{
+  display: grid;
+  background-color: #afddee2b;
+  grid-template-columns: repeat(2, 1fr); /* Creates two equal 1fr columns */
+  gap: 16px; /* Adds space between rows and columns */
+  padding: 16px;
+  border: 1px solid #c1bebe89;
+  border-radius: 5px;
+  width: 100%;
+}
+/* Now make input and select some bigger  */
+input, select{
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333232bf;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+/* Style the labels */
+label{
+  font-weight: bold;
+  color: #4b4848ea;
+}
+.address p{
+  font-weight: bold;
+  color: #2e2c2cea;
+  font-size: 1.2rem;
+}
+select{
+  cursor: pointer;
+}
+
+/* Creating mobile and tablet responsive design */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+    font-size: 1rem; /* Slightly smaller base font for phones */
+  }
+
+  .container {
+    padding: 12px;
+  }
+
+  /* Stack "Select User:" above the dropdown on mobile & tablet */
+  .inputArea {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .showProfile,
+  .topProfile,
+  .address {
+    padding: 12px;
+  }
+
+  .topProfile,
+  .address {
+    grid-template-columns: 1fr;
+  }
+}
+/* creating laptop and big screen responsive design */
+@media (min-width: 769px) {
+  .topProfile,
+  .address {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
